@@ -12,3 +12,24 @@ de la transmision de solicitudes y respuestas entre distintos servidores
 
 
 
+------ API, API REST
+
+interfaz de programación de aplicaciones, es una abstracción y definición
+de procedimitnos y funciones, REST: serie de recomendaciones para construir un API
+
+API REST: Es un API ya implementada usando REST que nos recomienda
+
+
+Un cliente (usuario) que quiere ver noticias --- > manda solicitud al servidor
+API_REST (se implementa en el backend)
+----- METODOS:
+POST: crear algun recurso
+GET: Leer y consultar
+PUT: editar
+DELETE: borrar
+----------------------
+URI: facilita acceder a la información
+
+No importa el lenguaje de programacion para el API
+
+JSON el preferido, es un formato que permite intercambiar datos
