@@ -1,0 +1,14 @@
+INTRODUCCIÓN A SERVICIOS Y API_REST
+
+Herramienta POSTMAN
+-------------------------------------
+FRONTEND: interaccion directa del usuario final (lado visual) como colores, botones, y experiencia de usuario
+
+BACKEND: tecnologia interna de las aplicacions, esta orientado al servidor, las app moviles llevan el backend 
+
+WebService: es un software que se implementa en el backend y se encarga
+de la transmision de solicitudes y respuestas entre distintos servidores
+(servicio web) comunicación de maquina a maquina.
+
+
+
