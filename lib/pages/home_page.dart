@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:pokedex_app/models/pokemon_model.dart';
 import 'package:pokedex_app/ui/widgets/item_pokemon_widget.dart';
 
 
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List pokemons = [];
+  List<PokemonModel> pokemonsModel = [];
   @override
   initState(){
     super.initState();
@@ -27,10 +29,9 @@ class _HomePageState extends State<HomePage> {
     http.Response response = await http.get(_uri);
     if(response.statusCode == 200){
       Map<String, dynamic> myMap = json.decode(response.body);
-      pokemons = myMap["pokemon"];
-      setState(() {
-        
-      });
+      //pokemons = myMap["pokemon"];
+      pokemonsModel = myMap["pokemon"].map((e)=>PokemonModel.fromJson(e)).toList();
+      setState(() {});
       //pokemons.forEach((element) {print(element["name"]);});
     }
 
@@ -59,10 +60,11 @@ class _HomePageState extends State<HomePage> {
                   crossAxisSpacing: 12.2,
                   childAspectRatio: 1.35,
                   crossAxisCount: 2,
-                  children: pokemons.map((e) => ItemPokemonWidget(
-                    name: e["name"],
-                    image: e["img"],
-                    types: List<String>.from(e["type"].map((item)=>item)),
+                  children: pokemonsModel.map((e) => ItemPokemonWidget(
+                    //name: e.name,
+                    //image: e.img,
+                    //types: e.type,
+                    pokemon: e,
                   )).toList()            
                   ),
               ],
