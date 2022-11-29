@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_app/ui/widgets/item_type_widget.dart';
 
 class ItemPokemonWidget extends StatelessWidget {
  
     String name;
     String image;
+    List<String> types;
 
-    ItemPokemonWidget({ required this.name, required this.image});
+    ItemPokemonWidget({ required this.name,
+     required this.image,
+     required this.types});
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +33,9 @@ class ItemPokemonWidget extends StatelessWidget {
                               style:TextStyle(color: Colors.white,
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold),),
-                              Container(
-                                margin: const EdgeInsets.symmetric(vertical: 6.0),
-                                padding: const EdgeInsets.symmetric(horizontal: 14.0,vertical: 4.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.27),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  boxShadow: [
-                                    BoxShadow(color: Colors.black.withOpacity(0.04),
-                                    offset: Offset(4,4),
-                                    blurRadius: 12.0)
-                                  ]
-                                ),
-                                child: Text("Grass",
-                                style: TextStyle(color: Colors.white),),
+
+                              Column(
+                                children: types.map((e) => ItemTypeWidget(text: e,)).toList(),
                               ),
                             ],
                           ),
